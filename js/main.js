@@ -1,25 +1,25 @@
-var resturl = 'https://gateway.marvel.com',
-    publicApiKey = '9ea47c833597c96fb78db63c9cd1b398',
-    $module = $('.module'),
-    $info = $('.more-information');
+$(document).ready( function () {
+  var resturl = 'https://gateway.marvel.com',
+      publicApiKey = '9ea47c833597c96fb78db63c9cd1b398',
+      $module = $('.module'),
+      $info = $('.more-information');
 
-function parseDataHero(data) {
-  for(hero in data.data.results) {
-    var card = '<div class="card hero"><div class="title">'+data.data.results[hero].name+'</div><img src="'+data.data.results[hero].thumbnail.path+'/portrait_uncanny.'+data.data.results[hero].thumbnail.extension+'"></img></div>';
-    $module.append(card);
+  function parseDataHero(data) {
+    for(hero in data.data.results) {
+      var card = '<div class="card hero"><div class="title">'+data.data.results[hero].name+'</div><img src="'+data.data.results[hero].thumbnail.path+'/portrait_uncanny.'+data.data.results[hero].thumbnail.extension+'"></img></div>';
+      $module.append(card);
+    };
+
+
+  };
+  function parseDataComic(data) {
+    console.log(data);
   };
 
+  function showError(msg) {
+    $info.html(msg).show();
+  };
 
-};
-function parseDataComic(data) {
-  console.log(data);
-};
-
-function showError(msg) {
-  $info.html(msg).show();
-};
-
-$(document).ready( function () {
 
   $('.header-bar .title').addClass('animate-ready');
   $info.html('Choose one to display the magic.').show();
