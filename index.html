@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Marvel Comics REST Client</title>
+  <link rel="stylesheet" href="styles/vendor/normalize.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href='http://fonts.googleapis.com/css?family=Carrois+Gothic+SC' rel='stylesheet' type='text/css'>
+  <script data-main="js/main" src="js/vendor/require.js"></script>
+</head>
+<body>
+  <header>
+    <div class="header-bar">
+      <span class="title">MARVEL REST CLIENT</span>
+    </div>
+    <div class="menu-container header-bar">
+      <ul class="menu-list">
+        <li class="menu-item"><a class="get-heroes">Get Heroes</a></li><li class="menu-item"><a class="get-comics">Get Comics</a></li>
+      </ul>
+    </div>
+  </header>
+  <div class="module hidden">
+    <div class="cards heroes">
+      <div class="card hero">
+        <span class="title"></span>
+        <div class="desciption"></div>
+      </div>
+
+    </div>
+    <div class="cards comics hidden"></div>
+  </div>
+  <div class="more-information hidden">
+
+  </div>
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/vendor/md5plugin.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

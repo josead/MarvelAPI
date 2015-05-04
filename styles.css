@@ -1,0 +1,144 @@
+body {
+  font-family: 'Carrois Gothic SC', sans-serif;
+}
+.hidden {
+  display: none;
+}
+header .header-bar {
+  width: 100%;
+  background: black;
+  text-align: center;
+}
+@media only screen and (min-width: 950px) {
+  header .header-bar {
+    height: 250px;
+    font-size: 1.1em;
+  }
+}
+@media only screen and (min-width: 530px) and (max-width: 949px) {
+  header .header-bar {
+    font-size: 1.5em;
+  }
+}
+header .header-bar .title {
+  cursor: default;
+  position: initial;
+  top: -200px;
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+}
+@media only screen and (min-width: 950px) {
+  header .header-bar .title {
+    font-size: 6em;
+  }
+}
+header .header-bar .title.animate-ready {
+  -webkit-transition: top 300ms ease-in;
+  -moz-transition: top 300ms ease-in;
+  -ms-transition: top 300ms ease-in;
+  -o-transition: top 300ms ease-in;
+  top: 30px;
+}
+@media only screen and (min-width: 950px) {
+  header .header-bar .title.animate-ready {
+    position: relative;
+    top: 60px;
+  }
+}
+header .header-bar.menu-container {
+  clear: both;
+  height: 2.4em;
+  background: #f0141e;
+  -webkit-box-shadow: 0 0 10px #132530;
+  -moz-box-shadow: 0 0 10px #132530;
+  box-shadow: 0 0 10px #132530;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 529px) {
+  header .header-bar.menu-container {
+    height: 100%;
+  }
+}
+@media only screen and (min-width: 530px) and (max-width: 949px) {
+  header .header-bar.menu-container {
+    height: 2.5em;
+  }
+}
+header .header-bar.menu-container ul {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+header .header-bar.menu-container ul li {
+  color: white;
+  font-size: 2em;
+  height: 100%;
+  width: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: bold;
+}
+@media only screen and (max-width: 529px) {
+  header .header-bar.menu-container ul li {
+    width: 100%;
+  }
+}
+header .header-bar.menu-container ul li a {
+  -webkit-transition: font-size 70ms ease-out;
+  -moz-transition: font-size 70ms ease-out;
+  -ms-transition: font-size 70ms ease-out;
+  -o-transition: font-size 70ms ease-out;
+}
+header .header-bar.menu-container ul li:hover {
+  background: white;
+}
+header .header-bar.menu-container ul li:hover a {
+  cursor: pointer;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  color: #f0141e;
+  font-size: 1.1em;
+  -webkit-transition: font-size 50ms ease-out;
+  -moz-transition: font-size 50ms ease-out;
+  -ms-transition: font-size 50ms ease-out;
+  -o-transition: font-size 50ms ease-out;
+}
+@media only screen and (min-width: 530px) and (max-width: 949px) {
+  header .header-bar.menu-container ul li:hover a {
+    font-size: 1.1em;
+  }
+}
+.module {
+  text-align: center;
+  padding-top: 4px;
+  background: #132530;
+}
+.module .card {
+  display: inline-block;
+  max-width: 100%;
+  width: 300px;
+  -webkit-box-shadow: 2px 2px 0 #132530;
+  -moz-box-shadow: 2px 2px 0 #132530;
+  box-shadow: 2px 2px 0 #132530;
+}
+.module .card .title {
+  max-width: 100%;
+  color: white;
+  text-shadow: 0 1px 3px #000000;
+  font-weight: bold;
+  font-size: 2em;
+  position: absolute;
+  width: inherit;
+}
+.module .card img {
+  max-width: 100%;
+}
+.more-information {
+  text-align: center;
+  font-family: 'Carrois Gothic SC', sans-serif;
+  font-size: 2em;
+  color: #132530;
+}

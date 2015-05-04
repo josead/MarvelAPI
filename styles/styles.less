@@ -1,0 +1,192 @@
+// out: ../styles.css
+// main: init.less
+
+
+
+//Constants
+@marvel-red:  #f0141e;
+@marvel-blue: #132530;
+@mobile:      ~"only screen and (max-width: 529px)";
+@tablet:      ~"only screen and (min-width: 530px) and (max-width: 949px)";
+@desktop:     ~"only screen and (min-width: 950px)";
+
+//Mixins
+.text-shadow (@string: 0 1px 3px rgba(0, 0, 0, 0.25)) {
+	text-shadow: @string;
+}
+.box-shadow (@string) {
+	-webkit-box-shadow: @string;
+	-moz-box-shadow:    @string;
+	box-shadow:         @string;
+}
+.drop-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+	-webkit-box-shadow:	@x @y @blur @spread rgba(0, 0, 0, @alpha);
+	-moz-box-shadow:	@x @y @blur @spread rgba(0, 0, 0, @alpha);
+	box-shadow:		@x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
+.box-sizing (@type: border-box) {
+	-webkit-box-sizing: @type;
+	-moz-box-sizing:    @type;
+	box-sizing:         @type;
+}
+.transition (@transition) {
+	-webkit-transition: @transition;
+	-moz-transition:    @transition;
+	-ms-transition:     @transition;
+	-o-transition:      @transition;
+}
+.transform(@string){
+	-webkit-transform: @string;
+	-moz-transform: 	 @string;
+	-ms-transform: 		 @string;
+	-o-transform: 		 @string;
+}
+.scale (@factor) {
+	-webkit-transform: scale(@factor);
+	-moz-transform: 	 scale(@factor);
+	-ms-transform: 		 scale(@factor);
+	-o-transform: 		 scale(@factor);
+}
+.rotate (@deg) {
+	-webkit-transform: rotate(@deg);
+	-moz-transform: 	 rotate(@deg);
+	-ms-transform: 		 rotate(@deg);
+	-o-transform: 		 rotate(@deg);
+}
+.translate3d (@x, @y: 0, @z: 0) {
+	-webkit-transform: translate3d(@x, @y, @z);
+	-moz-transform: 	 translate3d(@x, @y, @z);
+	-ms-transform: 		 translate3d(@x, @y, @z);
+	-o-transform: 		 translate3d(@x, @y, @z);
+}
+//End Mixins
+body {
+  font-family: 'Carrois Gothic SC', sans-serif;
+}
+//Properties
+.hidden {
+  display: none;
+}
+//End Properties
+
+header {
+  .header-bar {
+    width: 100%;
+    background: black;
+    text-align: center;
+    @media @desktop {
+      height: 250px;
+      font-size: 1.1em;
+    }
+    @media @tablet {
+      font-size: 1.5em;
+    }
+    .title {
+      cursor: default;
+      position: initial;
+      top: -200px;
+      color: white;
+      font-weight: bold;
+      font-size: 3em;
+      @media @desktop {
+        font-size: 6em;
+      }
+      &.animate-ready {
+        .transition(top 300ms ease-in);
+        top: 30px;
+        @media @desktop {
+          position: relative;
+          top:60px;
+        }
+      }
+
+    }
+
+    &.menu-container {
+      clear: both;
+      height: 2.4em;
+      background: @marvel-red;
+      .box-shadow(0 0 10px @marvel-blue );
+      @media @mobile {
+        height: 100%;
+      }
+      @media @tablet {
+        height: 2.5em;
+      }
+      ul {
+        height: 100%;
+        margin: 0;
+        padding:0;
+        list-style: none;
+        li {
+
+          color:white;
+          font-size: 2em;
+          height: 100%;
+          width: 50%;
+          display: inline-block;
+          vertical-align: middle;
+          font-weight: bold;
+          @media @mobile {
+            width: 100%;
+          }
+          a {
+            .transition(font-size 70ms ease-out);
+          }
+          &:hover {
+            background: white;
+            a {
+              cursor: pointer;
+              .text-shadow();
+              color: @marvel-red;
+              font-size: 1.1em;
+              .transition(font-size 50ms ease-out);
+              @media @tablet {
+                font-size: 1.1em;
+              }
+            }
+          }
+        }
+      }
+      .box-sizing()
+
+    }
+  }
+}
+.module {
+  text-align: center;
+  padding-top: 4px;
+  background: @marvel-blue;
+  .card {
+    display: inline-block;
+    max-width: 100%;
+    width: 300px;
+    .box-shadow(2px 2px 0 @marvel-blue);
+    .title {
+      max-width: 100%;
+      color: white;
+      .text-shadow(0 1px 3px #000);
+      font-weight: bold;
+      font-size: 2em;
+      position: absolute;
+      width: inherit;
+    }
+    img {
+      max-width: 100%;
+    }
+    &.hero {
+
+    }
+    &.comic {
+
+    }
+
+  }
+}
+
+.more-information {
+  text-align: center;
+  font-family: 'Carrois Gothic SC', sans-serif;;
+  font-size: 2em;
+  color: @marvel-blue
+}
